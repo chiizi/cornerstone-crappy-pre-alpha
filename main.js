@@ -9,6 +9,9 @@ var main;
   var canvas = document.getElementById("frame");
   var ctx = canvas.getContext("2d");
   
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  
   canvas.x = canvas.y = 0;
   
   var player = {
