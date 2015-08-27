@@ -19,7 +19,7 @@ var main;
     y: 0,
     width: 32,
     height: 32,
-    speed: 2048,
+    speed: 256,
     color: "#00ff88"
   };
   
