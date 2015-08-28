@@ -68,7 +68,7 @@ var main;
         player.yv = -200;
       }
     } else {
-      player.gravity = 2;
+      player.gravity = 4;
     }
     
     player.yv += player.gravity;
