@@ -56,6 +56,9 @@ var main;
   };
   
   var update = function() {
+    if (32 in keysDown) { // space
+      player.yv -= 20;
+    }
     if (37 in keysDown) { // left
       player.x -= player.speed / 60;
     }
@@ -64,9 +67,7 @@ var main;
     }
     if (player.y + player.height == canvas.height) {
       player.yv = player.gravity = 0;
-      if (32 in keysDown) { // space
-        player.yv = -200;
-      }
+      
     } else {
       player.gravity = 4;
     }
