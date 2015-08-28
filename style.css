@@ -20,8 +20,8 @@ canvas {
   background-color: #FFFFFF;
   border: 3px solid #000000;
   position: absolute;
-  top: 1vw;
-  right: -7vw;
-  width: 5vw;
-  height: 5vw;
+  top: 1.5vw;
+  right: -5vw;
+  width: 3vw;
+  height: 3vw;
 }
