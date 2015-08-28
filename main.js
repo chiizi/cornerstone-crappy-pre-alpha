@@ -73,7 +73,7 @@ var main;
     
     player.yv += player.gravity;
     
-    player.y += player.yv;
+    player.y += player.yv / 60;
     
     player = constrain(player, canvas);
   };
