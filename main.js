@@ -65,7 +65,7 @@ var main;
     if (player.y + player.height == canvas.height) {
       player.yv = player.gravity = 0;
       if (32 in keysDown) { // space
-        player.yv = -20;
+        player.yv = -200;
       }
     } else {
       player.gravity = 2;
