@@ -16,20 +16,17 @@ var main;
   
   canvas.x = canvas.y = 0;
   
-  var isAABB = function(obj1, obj2) {
-    return obj1.x < obj2.x + obj2.width &&
-      obj1.x + obj1.width > obj2.x &&
-      obj1.y < obj2.y + obj2.height &&
-      obj1.height + obj1.y > obj2.y
-  };
+  
   
   var player = {
     x: 0,
     y: 0,
+    yv: 0,
     width: 32,
     height: 32,
     speed: 256,
-    color: "#00ff88"
+    color: "#00ff88",
+    gravity: 0
   };
   
   var keysDown = {};
@@ -59,18 +56,24 @@ var main;
   };
   
   var update = function() {
-    if (38 in keysDown) { // up
-      player.y -= player.speed / 60;
-    }
-    if (40 in keysDown) { // down
-      player.y += player.speed / 60;
-    }
     if (37 in keysDown) { // left
       player.x -= player.speed / 60;
     }
     if (39 in keysDown) { // right
       player.x += player.speed / 60;
     }
+    if (player.y + player.height == canvas.height) {
+      player.yv = player.gravity = 0;
+      if (32 in keysDown) { // space
+        player.yv -= 20;
+      }
+    } else {
+      player.gravity = 10;
+    }
+    
+    player.yv += player.gravity;
+    
+    player.y += player.yv;
     
     player = constrain(player, canvas);
   };
