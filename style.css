@@ -10,7 +10,7 @@ canvas {
 }
 
 #menu {
-  background-color: #E0E0E0;
+  background-color: rgba(239, 239, 239, 239);
   width: 10vw;
   height: 100vh;
   position: absolute;
