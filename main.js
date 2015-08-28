@@ -29,6 +29,10 @@ var main;
     gravity: 0
   };
   
+  var toggleKeys = {
+    9: false
+  };
+  
   var keysDown = {};
 
   addEventListener("keydown", function (e) {
@@ -56,6 +60,7 @@ var main;
   };
   
   var update = function() {
+    // add key toggling code
     if (32 in keysDown) { // space
       player.yv -= 20;
     }
