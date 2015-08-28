@@ -6,7 +6,7 @@ canvas {
   position: absolute;
   width: 100%;
   height: 100%;
-  z-index: -1;
+  z-index: 0;
 }
 
 #menu {
@@ -16,6 +16,10 @@ canvas {
   position: absolute;
   top: 0;
   left: -10vw;
+  z-index: 2;
+}
+#menu:hover {
+  left: 0;
 }
 #button {
   background-color: #FFFFFF;
@@ -25,4 +29,5 @@ canvas {
   right: -5vw;
   width: 3vw;
   height: 3vw;
+  z-index: 1;
 }
