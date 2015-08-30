@@ -1,7 +1,7 @@
 var main;
 (main = (function() {
   window.scopeEval = function(name) {
-    return eval(name); // deliberate security vulnerability to allow people to execute code within the otherwise impenetrable main function's scope without changing any code
+    return eval(name); // deliberate stupid code to allow people to execute code within the main function's scope
   };
   
   var iteration = 0;
@@ -21,12 +21,16 @@ var main;
   var player = {
     x: 0,
     y: 0,
+    xv: 0,
     yv: 0,
+    xxl: 32,
+    yxl: 32,
+    xvmax: 8,
+    yvmax: 8,
     width: 32,
     height: 32,
     speed: 256,
-    color: "#00ff88",
-    gravity: 0
+    color: "#00ff88"
   };
   
   var toggleKeys = {
@@ -61,27 +65,29 @@ var main;
   
   var update = function() {
     // add key toggling code
-    if (32 in keysDown) { // space
-      player.yv -= 20;
-    }
+    
     if (37 in keysDown) { // left
-      player.x -= player.speed / 60;
-    }
-    if (39 in keysDown) { // right
-      player.x += player.speed / 60;
-    }
-    if (player.y + player.height == canvas.height) {
-      player.yv = player.gravity = 0;
-      
+      player.xv -= player.xxl / 60;
+    } else if (39 in keysDown) { // right
+      player.xv += player.xxl / 60;
     } else {
-      player.gravity = 4;
+      player.xv = Math.floor((player.xv + (player.xv < 0)) / 1.2);
+    }
+    if (38 in keysDown) { // up
+      player.yv -= player.yxl / 60;
+    } else if (40 in keysDown) { // down
+      player.yv += player.yxl / 60;
+    } else {
+      player.yv = Math.floor((player.yv + (player.yv < 0)) / 1.2);
     }
     
-    player.yv += player.gravity;
+    player.xv = Math.max(-player.xvmax, Math.min(player.xv, player.xvmax)); console.log(player.xv);
+    player.yv = Math.max(-player.yvmax, Math.min(player.yv, player.yvmax)); console.log(player.yv);
     
-    player.y += player.yv / 60;
+    player.x += player.xv;
+    player.y += player.yv;
     
-    player = constrain(player, canvas);
+    constrain(player, canvas)
   };
   
   return (function() {
