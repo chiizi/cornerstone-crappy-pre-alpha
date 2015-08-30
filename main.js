@@ -30,7 +30,7 @@ var main;
     width: 32,
     height: 32,
     speed: 256,
-    color: "#00ff88"
+    color: "#000000" // "#00ff88"
   };
   
   var toggleKeys = {
