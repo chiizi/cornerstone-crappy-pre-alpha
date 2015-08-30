@@ -29,7 +29,6 @@ var main;
     yvmax: 8,
     width: 32,
     height: 32,
-    speed: 256,
     color: "#000000" // "#00ff88"
   };
   
