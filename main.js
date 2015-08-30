@@ -56,6 +56,14 @@ var main;
     draw(player);
   };
   
+  var isColliding = function(obj1, obj2) {
+    return (obj1.x + obj1.width < obj2.x || obj1.x > obj2.x + obj2.width) && (obj1.y +  obj1.height < obj2.y || obj1.y > obj2.y + obj2.height);
+  };
+  
+  var deCollide = function(obj1, obj2) {
+    // do things
+  };
+  
   var constrain = function(obj1, obj2) {
     obj1.x = Math.min(Math.max(obj1.x, 0), obj2.width - obj1.width);
     obj1.y = Math.min(Math.max(obj1.y, 0), obj2.height - obj1.height);
