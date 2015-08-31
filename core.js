@@ -37,7 +37,7 @@ main = (function() {
 
 (function() {
   var http = new XMLHttpRequest();
-  http.open("HEAD", "core/cfg.js", false);
+  http.open("HEAD", "./core/cfg.js", false);
   http.send();
   if (http.status = 200) {
     var script = document.createElement("script");
