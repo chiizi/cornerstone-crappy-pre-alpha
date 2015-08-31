@@ -41,7 +41,7 @@ main = (function() {
   http.send();
   if (http.status = 200) {
     var script = document.createElement("script");
-    script.src = "core/cfg.js";
+    script.src = "./core/cfg.js";
     document.body.appendChild(script);
   }
 })();
