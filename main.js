@@ -1,23 +1,4 @@
-var main;
-(main = (function() {
-  window.scopeFuncExec = function(name) {
-    return name(); // yay no more eval :3
-  };
-  
-  var iteration = 0;
-  
-  var canvas = document.getElementById("frame");
-  var ctx = canvas.getContext("2d");
-  
-  (window.onresize = function() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
-  })();
-  
-  canvas.x = canvas.y = 0;
-  
-  
-  
+mainScopeExec(function() {
   var player = {
     x: 0,
     y: 0,
@@ -35,15 +16,6 @@ var main;
   var toggleKeys = {
     9: false
   };
-  
-  var keysDown = {};
-
-  addEventListener("keydown", function (e) {
-    keysDown[e.keyCode] = true;
-  }, false);
-  addEventListener("keyup", function (e) {
-    delete keysDown[e.keyCode];
-  }, false);
   
   var draw = function(obj) {
     ctx.fillStyle = obj.color;
@@ -96,13 +68,4 @@ var main;
     
     constrain(player, canvas)
   };
-  
-  return (function() {
-    update();
-    
-    render();
-    
-    iteration++;
-    window.requestAnimationFrame(main);
-  });
-})())();
+});
