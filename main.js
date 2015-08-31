@@ -1,7 +1,7 @@
 var main;
 (main = (function() {
-  window.scopeEval = function(name) {
-    return eval(name); // deliberate stupid code to allow people to execute code within the main function's scope
+  window.scopeFuncExec = function(name) {
+    return name(); // yay no more eval :3
   };
   
   var iteration = 0;
