@@ -1,33 +1,10 @@
 * { margin: 0; padding: 0;}
 
-body, html { height: 100%; }
-
 canvas {
   position: absolute;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-}
-
-#menu {
-  background-color: rgba(239, 239, 239, 239);
-  width: 10vw;
-  height: 100vh;
-  position: absolute;
-  top: 0;
-  left: -10vw;
-  z-index: 2;
-}
-#menu:hover {
-  left: 0;
-}
-#button {
-  background-color: #FFFFFF;
-  border: 3px solid #000000;
-  position: absolute;
-  top: 1.5vw;
-  right: -5vw;
-  width: 3vw;
-  height: 3vw;
-  z-index: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 512px;
+  height: 480px;
 }
