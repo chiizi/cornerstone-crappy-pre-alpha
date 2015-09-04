@@ -10,6 +10,7 @@ core.add = function(src) {
   http.send();
   var script = document.createElement("script");
   script.src = src;
+  script.type = "application/javascript";
   document.body.appendChild(script);
 };
 
